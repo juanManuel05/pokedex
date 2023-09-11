@@ -1,0 +1,13 @@
+<div class="pokemon-grid">
+    <div class="box" *ngFor="let pokemon of pokemons | paginate: {itemsPerPage:10, currentPage: currentPage}">
+        <img [src]="pokemon.sprites.front_default" alt="sprite">
+        <h3>
+            {{pokemon.name | uppercase}} 
+        </h3>
+        
+        <button [routerLink]="[pokemon.name]">
+            View Pokemon details  
+        </button>
+    </div>
+</div>
+<pagination-controls (pageChange)="onPageChange($event)" *ngIf="pokemons.length"></pagination-controls>

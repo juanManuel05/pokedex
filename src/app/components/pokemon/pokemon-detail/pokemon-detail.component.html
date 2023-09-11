@@ -1,0 +1,31 @@
+
+<ng-container *ngIf="pokemon; else pokemonNotFound">
+    <div class="container">
+        <div class="pokemon">
+            <h2>{{pokemon.name}}</h2>
+    
+            <div class="features">
+                <p class="discount" > 
+                    <b>Types:</b> {{pokemonTypes}}
+                </p>
+                <p class="discount">
+                    <b>weight:</b> {{pokemon.weight}}
+                </p>
+                <p class="discount">
+                    <b>Moves:</b> {{pokemonMoves}}
+                </p>
+                <p class="discount">
+                    <b>Health:</b> {{pokemon.stats[0].base_stat}}
+                </p>
+                <p class="discount">
+                    <b>Attack Power:</b> {{pokemon.stats[1].base_stat}}
+                </p>
+                <img class="pokemon-image" [src]="pokemon.sprites.front_default" alt="image">
+            </div>
+        </div>
+        <button onclick="history.back()">return to pokemon List</button>
+    </div>
+</ng-container>
+<ng-template #pokemonNotFound>
+    <app-page-not-found></app-page-not-found>
+</ng-template>
