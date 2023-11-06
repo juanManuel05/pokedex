@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PokemonListComponent } from './components/pokemon/pokemon-list/pokemon-list.component';
-import { PokemonDetailComponent } from './components/pokemon/pokemon-detail/pokemon-detail.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -10,8 +9,9 @@ const routes: Routes = [
     component: PokemonListComponent
   },
   {
-    path: ":pokemonUrl",
-    component: PokemonDetailComponent
+    path: "pokemons",
+    loadChildren: () =>
+      import("./components/pokemon/pokemon.module").then((m) => m.PokemonModule),
   },
   {
     path: "**",

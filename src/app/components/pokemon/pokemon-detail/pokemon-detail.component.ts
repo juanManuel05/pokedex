@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import * as fromApp from '../../../store/app.reducer';
 import { Subject, combineLatest, takeUntil } from 'rxjs';
@@ -16,7 +16,7 @@ export class PokemonDetailComponent implements OnInit, OnDestroy {
   public pokemonTypes: string[];
   public pokemonMoves: string[];
   
-  constructor(private route: ActivatedRoute, private store: Store<fromApp.AppState>) {}
+  constructor(private route: ActivatedRoute, private store: Store<fromApp.AppState>, private router: Router) {}
 
   ngOnInit() {
 
@@ -29,6 +29,10 @@ export class PokemonDetailComponent implements OnInit, OnDestroy {
       this.pokemonTypes = this.pokemon.types.map((type: any) => type.type.name);
       this.pokemonMoves = this.pokemon.moves.map((move: any) => move.move.name).slice(0,5);
     })
+  }
+
+  public onReturnToHome():void {
+    this.router.navigate(['/']);
   }
 
   ngOnDestroy(): void {

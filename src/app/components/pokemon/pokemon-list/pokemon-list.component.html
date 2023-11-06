@@ -5,7 +5,7 @@
             {{pokemon.name | uppercase}} 
         </h3>
         
-        <button [routerLink]="[pokemon.name]">
+        <button [routerLink]="'/pokemons/'+pokemon.name">
             View Pokemon details  
         </button>
     </div>

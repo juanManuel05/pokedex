@@ -23,7 +23,7 @@
                 <img class="pokemon-image" [src]="pokemon.sprites.front_default" alt="image">
             </div>
         </div>
-        <button onclick="history.back()">return to pokemon List</button>
+        <button (click)="onReturnToHome()">return to pokemon List</button>
     </div>
 </ng-container>
 <ng-template #pokemonNotFound>

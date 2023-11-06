@@ -1,3 +1,80 @@
-<header>
-    <h1>Pokemon species pokedex</h1>
-</header>
+<form>
+
+  <mat-sidenav-container fullscreen>
+
+    <mat-sidenav #sidenav>
+  
+        <mat-nav-list (click)="sidenav.close()">
+  
+            <a mat-list-item routerLink="/">
+                <mat-icon>library_books</mat-icon>
+                <span>Pokemons</span>
+            </a>
+  
+            <a mat-list-item routerLink="about">
+                <mat-icon>question_answer</mat-icon>
+                <span>About</span>
+            </a>
+  
+            <a mat-list-item>
+                <mat-icon>person_add</mat-icon>
+                <span>Register</span>
+            </a>
+  
+            <a mat-list-item>
+                <mat-icon>account_circle</mat-icon>
+                <span>Login</span>
+            </a>
+  
+        </mat-nav-list>
+  
+  
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+  
+        <button mat-icon-button (click)="sidenav.open()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <div class="nav-bar">
+          
+          <span>Pokemon Poxedex</span>          
+          
+          <mat-form-field>
+            <mat-icon matSuffix class="search-icon">search</mat-icon>
+            <input 
+              #input
+              type="text"
+              matInput
+              [formControl] = "formControl"
+              [matAutocomplete]="auto"
+              placeholder="Search..."
+            >
+            <mat-autocomplete  autoActiveFirstOption=true #auto="matAutocomplete" (optionSelected)='onGoToPokemon(input)'>
+              <mat-option *ngFor="let pokemon of filteredPokemons | async" [value]="pokemon">
+                {{pokemon}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          
+          <button mat-button class="account-button">
+            <mat-icon>account_circle</mat-icon>
+            Login
+          </button>
+        </div>
+        <!-- <span class="spacer"></span> -->
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+    </mat-sidenav-content>
+    
+  </mat-sidenav-container>
+</form>
+
+<!-- TODO add grouping funcionality
+  <mat-optgroup *ngFor="let group of pokemonGroup" [label]="group.letter">
+    <mat-option *ngFor="let pokemon of group.names" [value]="pokemon">
+      {{pokemon}}
+    </mat-option>
+  </mat-optgroup> 
+-->

@@ -19,6 +19,7 @@ export class PokemonListComponent implements OnInit, OnDestroy {
   private componentDestroyed: Subject<void> = new Subject();
   public pokemons: any[] = [];
   public currentPage = 1;
+ 
 
   constructor(private dataService: DataService, private store: Store<fromApp.AppState>, private loadingService: LoadingService){}
 

@@ -12,3 +12,5 @@
     background-position: left 10% bottom 20%;
     background-repeat: no-repeat; 
   }
+
+html { height: 100%; }

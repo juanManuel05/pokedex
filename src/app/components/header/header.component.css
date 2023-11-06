@@ -9,3 +9,91 @@ header h1 {
     color: white;
     text-transform: capitalize;
 }
+
+mat-toolbar {
+    min-height:64px;
+    max-height:64px
+}
+
+mat-sidenav-content {
+    background-image: linear-gradient(rgba(80, 68, 18, 0.6) 10%, transparent);
+}
+
+.spacer{
+    flex:1 1 auto;
+}
+
+.nav-bar{
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+}
+
+.search-icon{
+    color: grey;
+    /* padding-bottom: 10px !important;
+    padding-right: 10px !important; */
+}
+
+.account-button{
+    width: 6rem;
+    min-width: 6rem; 
+}
+
+.nav-bar >  span {
+    margin-right: 10px;
+}
+
+mat-form-field{
+    margin-top: 20px;
+    height: 100%;
+    width: 70%;
+}   
+
+:host ::ng-deep  mat-form-field .mat-mdc-text-field-wrapper{
+    border-radius: 10px;
+} 
+
+:host ::ng-deep  mat-form-field .mat-mdc-text-field-wrapper .mdc-line-ripple{
+    display: none;
+} 
+
+:host ::ng-deep  mat-form-field .mat-mdc-form-field-focus-overlay {
+    margin-top: 14px;
+    height: 100%;
+    background-color: white;
+}
+
+:host ::ng-deep  mat-form-field .mdc-text-field--no-label:not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mat-mdc-form-field-infix {
+    padding-top: 10px;
+}
+
+:host ::ng-deep  mat-form-field .mat-mdc-form-field-icon-suffix>.mat-icon {
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    box-sizing: content-box;
+}
+
+@media (max-width: 40rem) {
+    a {
+        width: 30%;
+    }
+    button.search-icon{
+        display: block;
+    }
+
+    .nav-bar{
+        justify-content: space-evenly;
+    }
+
+    .nav-bar >  span {
+        display: none;
+    }
+
+}
+
+@media (min-width: 40rem) { 
+}
