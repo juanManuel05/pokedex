@@ -33,13 +33,6 @@ mat-sidenav-content {
 
 .search-icon{
     color: grey;
-    /* padding-bottom: 10px !important;
-    padding-right: 10px !important; */
-}
-
-.account-button{
-    width: 6rem;
-    min-width: 6rem; 
 }
 
 .nav-bar >  span {
@@ -75,6 +68,15 @@ mat-form-field{
     padding-right: 10px;
     padding-top: 0px;
     box-sizing: content-box;
+}
+
+:host ::ng-deep .material-symbols-outlined{
+    margin-top: 10px;
+}
+
+.user-info {
+    align-items: center;
+    display: flex;
 }
 
 @media (max-width: 40rem) {

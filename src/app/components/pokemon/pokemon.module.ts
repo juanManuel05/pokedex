@@ -5,15 +5,10 @@ import { PokemonRoutingModule } from './pokemon-routing.module';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    PokemonDetailComponent,
-    PageNotFoundComponent,
-  ],
-  imports: [
-    CommonModule,
-    PokemonRoutingModule,
-  ]
+  declarations: [PokemonDetailComponent, PageNotFoundComponent],
+  imports: [FormsModule, CommonModule, PokemonRoutingModule],
 })
-export class PokemonModule { }
+export class PokemonModule {}
